@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://mysql:3306/activiti?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: root
+    password: shen.7388.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  activiti:
+    # 自动生成Activity相关表，表创建后设置成false
+    database-schema-update: true
+    # 开启历史表的使用，否则将不会创建8张历史表
+    db-history-used: true
+    # 保存历史数据级别设置为full最高级别，便于历史数据的追溯
+    history-level: full
+    # 是否自动部署，自动部署验证设置:true-开启（默认）、false-关闭
+    check-process-definitions: false
+    # 在流程引擎启动就激活AsyncExecutor,异步：true-开启（默认）、false-关闭
+    async-executor-activate: true
+    # 前缀
+    process-definition-location-prefix: classpath:/processes/
