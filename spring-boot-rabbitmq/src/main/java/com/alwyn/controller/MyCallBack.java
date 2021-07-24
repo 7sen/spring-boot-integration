@@ -3,9 +3,10 @@ package com.alwyn.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.stereotype.Component;
 
 @Slf4j
-//@Component
+@Component
 public class MyCallBack implements RabbitTemplate.ConfirmCallback {
 
     /**

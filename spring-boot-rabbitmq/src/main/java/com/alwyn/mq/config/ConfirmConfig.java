@@ -23,10 +23,10 @@ public class ConfirmConfig {
     // 声明业务 Exchange
     @Bean("confirmExchange")
     public DirectExchange confirmExchange() {
-        // return new DirectExchange(CONFIRM_EXCHANGE_NAME);
-        return ExchangeBuilder.directExchange(CONFIRM_EXCHANGE_NAME).durable(true)
+        return new DirectExchange(CONFIRM_EXCHANGE_NAME);
+        // return ExchangeBuilder.directExchange(CONFIRM_EXCHANGE_NAME).durable(true)
                 // 无法投递的消息将转发给备份交换机
-                .withArgument("alternate-exchange", BACKUP_EXCHANGE_NAME).build();
+                // .withArgument("alternate-exchange", BACKUP_EXCHANGE_NAME).build();
     }
 
     // 声明确认队列

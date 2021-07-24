@@ -1,6 +1,7 @@
 package com.alwyn.controller;
 
 import com.alwyn.service.MessageSenderService;
+import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -18,16 +19,16 @@ public class ProducerController {
     public static final String CONFIRM_EXCHANGE_NAME = "confirm.exchange";
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    /*@Autowired
-    private MyCallBack myCallBack;*/
+    @Autowired
+    private MyCallBack myCallBack;
     @Autowired
     private MessageSenderService senderService;
 
-   /* //依赖注入 rabbitTemplate 之后再设置它的回调对象
+    //依赖注入 rabbitTemplate 之后再设置它的回调对象
     @PostConstruct
     public void init() {
         rabbitTemplate.setConfirmCallback(myCallBack);
-    }*/
+    }
 
     @GetMapping("/sendMessage/{message}")
     public void sendMessage(@PathVariable String message) {

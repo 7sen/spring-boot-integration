@@ -18,7 +18,7 @@ public class ProcessInstancesTest {
 
     @Test
     public void initProcessInstance() {
-        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("myProcess_Part1", "businessKey");
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("myProcess_UEL", "businessKey");
         System.out.println("流程实例ID：" + processInstance.getProcessDefinitionId());
     }
 
@@ -36,10 +36,10 @@ public class ProcessInstancesTest {
 
     @Test
     public void activateProcessInstance() {
-        runtimeService.suspendProcessInstanceById("9717c8eb-de6a-11eb-95bf-26fd52b9b2ca");
-        System.out.println("挂起流程实例");
+        // runtimeService.suspendProcessInstanceById("9717c8eb-de6a-11eb-95bf-26fd52b9b2ca");
+        // System.out.println("挂起流程实例");
 
-        // runtimeService.activateProcessInstanceById("9717c8eb-de6a-11eb-95bf-26fd52b9b2ca");
-        // System.out.println("激活流程实例");
+        runtimeService.activateProcessInstanceById("94db1b1c-dff9-11eb-a733-26fd52b9b2ca");
+        System.out.println("激活流程实例");
     }
 }

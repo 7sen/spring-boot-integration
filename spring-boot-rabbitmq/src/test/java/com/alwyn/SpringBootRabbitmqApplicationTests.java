@@ -26,7 +26,7 @@ class SpringBootRabbitmqApplicationTests {
 
     @Test
     public void workQueueProducer() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100000; i++) {
             rabbitTemplate.convertAndSend("work.queue", "hello word! " + i);
         }
     }

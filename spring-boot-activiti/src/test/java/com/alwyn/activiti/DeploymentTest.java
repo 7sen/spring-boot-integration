@@ -19,10 +19,10 @@ public class DeploymentTest {
 
     @Test
     public void initDeploymentBPMN() {
-        String filename = "processes/Part1_Deployment.bpmn";
+        String filename = "processes/UEL_Test.bpmn";
         Deployment deployment = repositoryService.createDeployment()
                 .addClasspathResource(filename)
-                .name("流程部署测试")
+                .name("流程部署测试UEL表达式")
                 .deploy();
         System.out.println(deployment.getName());
     }
