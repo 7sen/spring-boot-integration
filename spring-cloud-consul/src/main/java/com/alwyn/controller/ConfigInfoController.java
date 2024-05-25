@@ -19,9 +19,11 @@ public class ConfigInfoController {
 
     @Value("${config.info}")
     private String configInfo;
+    @Value("${message:hello}")
+    private String message;
 
     @GetMapping("/configInfo")
     public String getConfigInfo() {
-        return configInfo;
+        return configInfo + message;
     }
 }
